@@ -19,6 +19,7 @@
         <br> <br>
         <input type="submit">
         <br> <br>
+        <p id="state"></p>
     </form>
     </center>
     
@@ -27,8 +28,12 @@
         $(document).on('submit','#post-form',function(e){
 
             e.preventDefault();
+            $("#state").empty();
+            $("#state").append("Sending...");
+
 
             $.ajax({
+                
                 type: 'POST',
                 url: "{% url 'createData' %}",
                 data: {
@@ -37,7 +42,10 @@
                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
                 },
                 success : function(data){
-                    alert(data);
+                    //alert(data);
+                    $("#state").empty();
+                    $("#state").append(data);
+                    
                 },
                     
             }); 
