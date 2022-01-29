@@ -8,7 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Data will be created here!</h1>
+    <center>
+        <h1>Enter the asking values!</h1>
     <br>
     <form id="post-form" method="POST">
         {% csrf_token %}
@@ -19,6 +20,8 @@
         <input type="submit">
         <br> <br>
     </form>
+    </center>
+    
 
     <script>
         $(document).on('submit','#post-form',function(e){

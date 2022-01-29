@@ -9,7 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Data will be listed here!</h1>
+    <center><h1>Here's the data list!</h1></center>
+    
 
     <ul id="display-data">
 
@@ -28,7 +29,7 @@
                             var name = "<h3><li>"+ response.data[key].name +"</li><h3>";
                             $("#display-data").append(name);
 
-                            var age = "<h3><li>"+ response.data[key].age +"</li><h3>";
+                            var age = "<h3> Age : "+ response.data[key].age +"<h3>";
                             $("#display-data").append(age);
                         }
                     },
