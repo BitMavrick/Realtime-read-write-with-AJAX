@@ -5,8 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Viewer | Ajax</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Data will be listed here!</h1>
+
+    <ul id="display-data">
+
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            setInterval(function(){
+                $.ajax({
+                    type: 'GET',
+                    url: "{% url 'getView' %}",
+                    success : function(response){
+                        // console.log(response);
+                        $("#display-data").empty();
+                        for(var key in response.data){
+                            var name = "<h3><li>"+ response.data[key].name +"</li><h3>";
+                            $("#display-data").append(name);
+
+                            var age = "<h3><li>"+ response.data[key].age +"</li><h3>";
+                            $("#display-data").append(age);
+                        }
+                    },
+                    error: function(response){
+                        alert("Something went wrong!");
+                    }
+                });
+            }, 1000);
+        });
+    </script>
+
 </body>
 </html>

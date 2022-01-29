@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create | Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Data will be created here!</h1>
+    <br>
+    <form id="post-form" method="POST">
+        {% csrf_token %}
+        Name : <input type="text" name='name' id="name">
+        <br> <br>
+        Age : <input type="number" name='age' id="age">
+        <br> <br>
+        <input type="submit">
+        <br> <br>
+    </form>
+
+    <script>
+        $(document).on('submit','#post-form',function(e){
+
+            e.preventDefault();
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'createData' %}",
+                data: {
+                    name : $('#name').val(),
+                    age : $('#age').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                },
+                success : function(data){
+                    alert(data);
+                },
+                    
+            }); 
+    });
+    </script>
+
 </body>
 </html>
