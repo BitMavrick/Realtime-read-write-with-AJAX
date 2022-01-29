@@ -17,8 +17,7 @@ Hey,this is the basic implementation type of ajax realtime read write from the d
 > pipenv install -r requirements.txt
 ```
 
-3. Look out the seettings.py and views.py py and customaize with your details.
-4. Run the project locally.
+3. Run the project locally.
 ```console
 > python manage.py runserver
 ```
