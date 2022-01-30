@@ -10,7 +10,7 @@ Hey,this is the basic implementation type of ajax realtime read write from the d
 ```
 
 2. Setup on your PC
->> Create a virtual env then activate that, after that install all the requirements
+> Create a virtual env then activate that, after that install all the requirements
 ```console
 > pip install pipenv
 > pipenv shell
