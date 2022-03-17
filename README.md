@@ -9,7 +9,7 @@ Hey,this is the basic implementation type of ajax realtime read write from the d
 > https://github.com/mehedi705/Realtime-read-write-with-AJAX.git
 ```
 
-2. Setup on your PC
+2. Setup on your Computer
 > Create a virtual env then activate that, after that install all the requirements
 ```console
 > pip install pipenv
